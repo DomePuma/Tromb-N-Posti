@@ -213,6 +213,8 @@ GameObject:
   m_Component:
   - component: {fileID: 109266665}
   - component: {fileID: 109266664}
+  - component: {fileID: 109266667}
+  - component: {fileID: 109266666}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -288,6 +290,44 @@ Transform:
   m_Father: {fileID: 1102417757}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &109266666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109266663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f773374694c3b8341a610322322c5306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &109266667
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109266663}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.1665297, y: -2.999649}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.7943106, y: 9.614376}
+  m_EdgeRadius: 0
 --- !u!1001 &241740985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -368,6 +408,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 241740985}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &614631588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8013550312276728412, guid: 26cd9fb3af7c0604b8b103d2a3977ebe,
+    type: 3}
+  m_PrefabInstance: {fileID: 978269973}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &614631594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614631588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab364a1e2d3b9f4caf28cef585a2c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &978269973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -379,6 +437,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Proto Character Tromb
+      objectReference: {fileID: 0}
+    - target: {fileID: 8013550312276728412, guid: 26cd9fb3af7c0604b8b103d2a3977ebe,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8013550312276728415, guid: 26cd9fb3af7c0604b8b103d2a3977ebe,
         type: 3}

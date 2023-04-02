@@ -1,29 +1,18 @@
 using UnityEngine;
-
-public class PostiAddon : MonoBehaviour
+using UnityEngine.InputSystem;
+public class PostiAddon : CharacterController
 {
-    Rigidbody2D rb;
     float vertical;
-    CharacterController controllerScript;
 
-    void Start()
+    new private void Move(InputAction.CallbackContext context)
     {
-        rb = GetComponent<Rigidbody2D>();
-        controllerScript = GetComponent<CharacterController>();
-    }
-
-    void Update()
-    {
-        MoveOnWall();
-    }
-    void MoveOnWall()
-    {
-        vertical = Input.GetAxisRaw("Vertical");
-        if (Input.GetButtonDown("Vertical") && controllerScript.canWalkOnWall == true)
+        horizontal = context.ReadValue<Vector2>().x;
+        vertical = context.ReadValue<Vector2>().y;
+        if(canWalkOnWall && vertical > 0f || vertical < 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, vertical * controllerScript.speed);
+            rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
         }
-        if (Input.GetButtonUp("Vertical") && controllerScript.canWalkOnWall == true)
+        if(canWalkOnWall && vertical == 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0);
         }
@@ -33,7 +22,7 @@ public class PostiAddon : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             rb.gravityScale = 0;
-            controllerScript.canWalkOnWall = true;
+            canWalkOnWall = true;
         }
 
     }
@@ -41,7 +30,7 @@ public class PostiAddon : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
-            controllerScript.canWalkOnWall = false;
+            canWalkOnWall = false;
             rb.gravityScale = 1;
         }
     }

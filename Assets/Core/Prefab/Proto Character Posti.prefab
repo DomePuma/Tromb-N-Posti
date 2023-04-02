@@ -25,7 +25,7 @@ PrefabInstance:
     - target: {fileID: 2429738437157568410, guid: 4c326d62c82544e4c8f69e9be9073884,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.14
       objectReference: {fileID: 0}
     - target: {fileID: 2429738437157568410, guid: 4c326d62c82544e4c8f69e9be9073884,
         type: 3}
@@ -74,11 +74,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2429738437515295045, guid: 4c326d62c82544e4c8f69e9be9073884,
         type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429738437515295045, guid: 4c326d62c82544e4c8f69e9be9073884,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8347998b9ed53d14eb71c669fcb28051, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2429738437157568389, guid: 4c326d62c82544e4c8f69e9be9073884, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4c326d62c82544e4c8f69e9be9073884, type: 3}
+--- !u!50 &189761697128894820 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2429738437157568388, guid: 4c326d62c82544e4c8f69e9be9073884,
+    type: 3}
+  m_PrefabInstance: {fileID: 2529335782183038688}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &189761697128894841 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2429738437157568409, guid: 4c326d62c82544e4c8f69e9be9073884,
@@ -97,3 +109,99 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9915acec62eb7439b3a6c5c1d14bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 189761697128894820}
+  groundCheck: {fileID: 3389760979772520985}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  speed: 8
+  jumpingPower: 16
+--- !u!114 &-5892291984729200942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189761697128894841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9dbb781922d484649a5801bc1770bace,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2dd9f900-25ae-483e-aa12-bbe39529f082
+    m_ActionName: Tromb/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 519dc591-eb2e-4d46-9093-22e7fdc76a6f
+    m_ActionName: Tromb/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 947253560851659147}
+        m_TargetAssemblyTypeName: PostiAddon, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 08131159-8cc0-405d-a18a-41a3a01cabcd
+    m_ActionName: Posty/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 947253560851659147}
+        m_TargetAssemblyTypeName: CharacterController, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f7a4680f-2d98-448a-8726-4f8790670b3d
+    m_ActionName: Posty/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 663b6201-2856-43a1-a86b-a1d9584a0310
+    m_ActionName: Tromb/Grab[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ee3fceef-9fe8-4b81-83ae-3d474aeec376
+    m_ActionName: Tromb/UnGrab[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 516f6ea7-3411-4d46-808a-5af46cd852ae
+    m_ActionName: Tromb/GoToGrab[/XInputControllerWindows/buttonNorth]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Posty
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!4 &3389760979772520985 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 869433154306725113, guid: 4c326d62c82544e4c8f69e9be9073884,
+    type: 3}
+  m_PrefabInstance: {fileID: 2529335782183038688}
+  m_PrefabAsset: {fileID: 0}
